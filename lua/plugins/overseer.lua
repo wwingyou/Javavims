@@ -10,8 +10,12 @@ return {
       },
     }
 
-    vim.keymap.set('n', '<leader>rr', '<cmd>OverseerRun<CR>', { desc = '[Overseer] Run Task' });
-    vim.keymap.set('n', '<leader>rt', '<cmd>OverseerToggle<CR>', { desc = '[Overseer] Toggle Task UI' });
+    vim.keymap.set('n', '<leader>rr', function() 
+      local overseer = require'overseer';
+      vim.cmd('OverseerRun')
+      overseer.open()
+    end, { desc = '[Overseer] Run Task' });
+    vim.keymap.set('n', '<leader>ot', '<cmd>OverseerToggle<CR>', { desc = '[Overseer] Toggle Task UI' });
      
     vim.api.nvim_create_user_command('ConfigTask', function()
       local config_file = vim.fn.getcwd() .. '/.vscode/tasks.json'

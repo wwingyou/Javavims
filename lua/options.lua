@@ -86,3 +86,6 @@ vim.g.switch_definitions = {
 
 -- Reduce updatetime to open up diagnostic faster
 vim.opt.updatetime=1000
+
+vim.opt.splitbelow=true
+vim.opt.equalalways=false

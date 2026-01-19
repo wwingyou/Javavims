@@ -2,6 +2,7 @@ return {
   {
     "rcasia/neotest-java",
     ft = "java",
+    tag = "v0.29.3",
     dependencies = {
       "mfussenegger/nvim-jdtls",
       "mfussenegger/nvim-dap", -- for the debugger
@@ -75,12 +76,15 @@ return {
     },
     config = function()
       require'neotest'.setup {
+        log_level = vim.log.levels.TRACE,
         adapters = {
-          require'neotest-java'
+          require'neotest-java'({
+            java_home = os.getenv("JAVA_HOME"),
+          })
         },
         output_panel = {
           open = '10sp'
-        }
+        },
       }
     end
   },
