@@ -2,7 +2,7 @@ return {
   {
     "rcasia/neotest-java",
     ft = "java",
-    tag = "v0.29.3",
+    tag = "v0.18.6",
     dependencies = {
       "mfussenegger/nvim-jdtls",
       "mfussenegger/nvim-dap", -- for the debugger
